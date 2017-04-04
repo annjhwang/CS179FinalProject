@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CheckIn</title>
+    <!--update view based on the device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--get jquery mobile libraries and css-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+</head>
+<body>
+
+
+
+<div data-role="page" class="pages" id="map-page" data-url="map-page">
+    <div data-role="header" bac>
+        <h1>CheckIn</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#map-page">Map</a></li>
+                <li><a href="#list" class="ui-btn-active ui-state-persist">List</a></li>
+                <li><a href="#chat">Chat</a></li>
+            </ul>
+        </div>
+
+    </div><!-- /header -->
+    <button class="ui-btn ui-btn-inline" id="sos">SOS</button>
+
+
+</div>
+
+
+<div data-role="page" id="list" class="pages">
+    <div data-role="header" bac>    
+        <h1>List</h1>
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#map-page">Map</a></li>
+            <li><a href="#list" class="ui-btn-active ui-state-persist">List</a></li>
+            <li><a href="#chat">Chat</a></li>
+        </ul>
+    </div>
+    <div data-role="content">
+        
+
+
+    </div>
+    </div>
+</div>
+
+<div data-role="page" id="chat" class="pages">
+    <div data-role="header" bac>
+        <h1>Chat</h1>
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#map-page">Map</a></li>
+            <li><a href="#list">List</a></li>
+            <li><a href="#chat" class="ui-btn-active ui-state-persist">Chat</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+
+<div class="btn-group" id="footer">
+  <div class="btn-group" style="width:100%">
+  <button style="width:33.3%">Tell Everyone You're Good</button>
+  <button style="width:33.3%; background-color: #f98704">Request CheckIn</button>
+  <button style="width:33.3%; background-color: #4286f4">CheckOut</button>
+</div>
+
+
+   <!--  <button class="ListViewbutton">
+        BUTTON 2
+    </button>
+     -->
+</div>
+
+</body>
+</html>
