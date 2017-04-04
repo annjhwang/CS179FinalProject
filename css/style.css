@@ -2,6 +2,26 @@
     background-color: lightblue;
 }
 
+#map {
+    height: 490px;
+    width: 100%;
+}
+
+#sos {
+	position:absolute;
+	z-index: 10;
+}
+
+#meetupOptions {
+	margin-top: 15px;
+	margin-left: 4px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 p {
 	font-size: 24px;
 }
