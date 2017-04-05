@@ -8,6 +8,7 @@
     <!--get jquery mobile libraries and css-->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>    
@@ -26,7 +27,7 @@
         </div>
 
     </div><!-- /header -->
-    <button class="ui-btn ui-btn-inline" id="sos">SOS</button>
+    <button href="#sos" class="ui-btn ui-btn-inline" id="sos">SOS</button>
     <div data-role="content" >
         <div id="map"></div>
     
@@ -107,6 +108,19 @@
     </div>
 </div>
 
+<div data-role="page" class="pages" id="sos" data-url="sos-page">
+    <div data-role="header" bac class="w3-red">
+    // TODO: need to put a back button 
+     <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
+    <h1>SOS</h1>
+    </div>
+        <ul>
+        <button class="w3-green">Can someone find me?</button>
+        <button class="w3-amber">Hey Guys, I need help</button>
+        <button class="w3-red">Call 911+ <br> Send Location</button>
+        <button class="w3-blue"><span style="font-family:'Segoe UI Symbol';color:white;font-size:40px;">&#x1f514;</span> Alarm</button>
+        </ul>
+</div>
 
 <script>
       function initMap() {
