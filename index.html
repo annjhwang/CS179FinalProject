@@ -27,7 +27,7 @@
         </div>
 
     </div><!-- /header -->
-    <button class="ui-btn ui-btn-inline" id="sosbutton" href="#sos">SOS</button>
+    <button class="ui-btn ui-btn-inline" id="sos" href="#sos">SOS</button>
     <div data-role="content" >
         <div id="map"></div>
     
@@ -38,7 +38,30 @@
 
     </div>
 </div>
-
+    
+<div data-role="page" id="friendalert" class="pages">
+    <div data-role="header">
+        <h1>CheckIn</h1>
+        <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
+    </div>
+    
+    <div data-role="content">
+        
+    <div class="w3-red">
+        <p>Arman just left your group location without checking out.  He doesn’t appear to be walking toward his home!</p> 
+    </div>
+        
+    <div>
+    <img style="margin:auto; float:left; vertical-align: center" src="pics/arman.jpg" alt="arman" width="150px"> <h4>Arman</h4> <i class="w3-red">Last CheckIn 2 Hours ago<i>
+    </div>
+        
+    <button class="w3-green">Ask Arman to CheckIn</button>
+    <button class="w3-amber">Message</button>
+        
+    </div>
+    
+</div>
+        
 <div data-role="page" id="droppin" class="pages">
     <div data-role="header">
         <h1>CheckIn</h1>
