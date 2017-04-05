@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CheckIn</title>
+    <!--update view based on the device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--get jquery mobile libraries and css-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>    
+</head>
+<body>
+
+
+
+<div data-role="page" id="welcome" class="pages">
+    <div data-role="header">
+        <h1>CheckIn</h1>
+  
+     </div>
+        <div data-role="content" >
+        <!--<div id="map"></div>-->
+            <h3> Welcome to CheckIn!<h3>
+            <a href="#add-friends" class="ui-btn">Make A Group</a>
+        </div>
+</div>
+
+<div data-role="page" id="add-friends" class="pages">
+    <div data-role="header">
+        <h1>Add Friends</h1>
+  
+     </div>
+        <div data-role="content" >
+        <!--<div id="map"></div>-->
+            <h3> Welcome to CheckIn!<h3>
+            <a href="#" class="ui-btn">Make A Group</a>
+        </div>
+</div>
+
+
+
+
+<div data-role="page" id="list" class="pages">
+    <div data-role="header">    
+        <h1>List</h1>
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#map-page">Map</a></li>
+            <li><a href="#list" class="ui-btn-active ui-state-persist">List</a></li>
+            <li><a href="#chat">Chat</a></li>
+        </ul>
+    </div>
+    <div data-role="content">
+        <div style="width:100% ; height:100px; background-color: red">
+            <button style="margin:auto; float:left; vertical-align: center">Arman</button>
+            <button style="margin:auto; float:right">Message</button>
+            <button style="margin:auto; float:right">CheckIn</button>
+        </div>
+        <div style="width:100% ; height:100px; background-color: purple">
+            <button style="margin:auto; float:left">Alice</button>
+            <button style="margin:auto; float:right">Message</button>
+            <button style="margin:auto; float:right">CheckIn</button>
+        </div>
+        <div style="width:100% ; height:100px; background-color: yellow">
+            <button style="margin:auto; float:left">Gabe</button>
+            <button style="margin:auto; float:right">Message</button>
+            <button style="margin:auto; float:right">CheckIn</button>
+        </div>
+        <div class="btn-group" style="width:100%">
+            <button style="width:33.3% ; background-color: green">I'm Good</button>
+            <button style="width:33.3%; background-color: #f98704">Request CheckIn</button>
+            <button style="width:33.3%; background-color: #4286f4">CheckOut</button>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<div data-role="page" id="chat" class="pages">
+    <div data-role="header">
+        <h1>Chat</h1>
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#map-page">Map</a></li>
+            <li><a href="#list">List</a></li>
+            <li><a href="#chat" class="ui-btn-active ui-state-persist">Chat</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+
+<div data-role="page" class="pages" id="sos" data-url="sos-page">
+    <div data-role="header" bac class="w3-red">
+    // TODO: need to put a back button 
+     <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
+    <h1>SOS</h1>
+    </div>
+        <ul>
+        <button class="w3-green">Can someone find me?</button>
+        <button class="w3-amber">Hey Guys, I need help</button>
+        <button class="w3-red">Call 911+ <br> Send Location</button>
+        <button class="w3-blue"><span style="font-family:'Segoe UI Symbol';color:white;font-size:40px;">&#x1f514;</span> Alarm</button>
+        </ul>
+</div>
+
+
+</body>
+</html>
