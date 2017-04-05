@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<! Its me >
+<head>
+    <title>CheckIn</title>
+    <!--update view based on the device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--get jquery mobile libraries and css-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>    
+</head>
+<body>
+
+<div data-role="page" class="pages" id="map-page" data-url="map-page">
+    <div data-role="header">
+        <h1>CheckIn</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#map-page" class="ui-btn-active ui-state-persist">Map</a></li>
+                <li><a href="#list">List</a></li>
+                <li><a href="#chat">Chat</a></li>
+            </ul>
+        </div>
+
+    </div><!-- /header -->
+    <button href="#sos" class="ui-btn ui-btn-inline" id="sos">SOS</button>
+    <div data-role="content" >
+        <div id="map"></div>
+    
+        <div data-role="controlgroup" data-type="horizontal" id="meetupOptions">
+        <a href="#droppin" data-role="button">Drop pin to meet up</a>
+        <a href="#smartmeetup" data-role="button">Smart Meet Up</a>
+        </div>
+
+    </div>
+</div>
+
+<div data-role="page" id="droppin" class="pages">
+    <div data-role="header">
+        <h1>CheckIn</h1>
+    <div data-role="navbar">
+            <ul>
+                <li><a href="#map-page" class="ui-btn-active ui-state-persist">Map</a></li>
+                <li><a href="#list">List</a></li>
+                <li><a href="#chat">Chat</a></li>
+            </ul>
+        </div>
+
+    <div data-role="content" >
+    <!--<div id="map"></div>-->
+    <button>Drop pin to meet up</button>
+    </div>
+</div>
+</div>
+
+
+<div data-role="page" id="smartmeetup" class="pages">
+    <div data-role="header"></div>
+        <h1>CheckIn</h1>
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#map-page" class="ui-btn-active ui-state-persist">Map</a></li>
+            <li><a href="#list">List</a></li>
+            <li><a href="#chat">Chat</a></li>
+        </ul>
+    </div>
+    <div data-role="content">
+    <!--<div id="map"></div>-->
+        <button>Smart Meet Up</button>
+    <div>
+</div>
+</div>
+</div>
+
+
+<div data-role="page" id="list" class="pages">
+    <div data-role="header">    
+        <h1>CheckOut</h1>
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#map-page">Map</a></li>
+            <li><a href="#list" class="ui-btn-active ui-state-persist">List</a></li>
+            <li><a href="#chat">Chat</a></li>
+        </ul>
+    </div>
+    <div data-role="content" id="stuff">
+
+    	You're all checked out! Have a safe night and remember you can still contact your friends or call for help. 
+
+        Need to check back in? No problem. 
+
+    </div>
+
+    <img src="finger.png"></div> <!-- GET HELP ON THIS ONE -->
+</div>
+
+<div data-role="page" id="chat" class="pages">
+    <div data-role="header">
+        <h1>Chat</h1>
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#map-page">Map</a></li>
+            <li><a href="#list">List</a></li>
+            <li><a href="#chat" class="ui-btn-active ui-state-persist">Chat</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+
+<div data-role="page" class="pages" id="sos" data-url="sos-page">
+    <div data-role="header" bac class="w3-red">
+    // TODO: need to put a back button 
+     <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
+    <h1>SOS</h1>
+    </div>
+        <ul>
+        <button class="w3-green">Can someone find me?</button>
+        <button class="w3-amber">Hey Guys, I need help</button>
+        <button class="w3-red">Call 911+ <br> Send Location</button>
+        <button class="w3-blue"><span style="font-family:'Segoe UI Symbol';color:white;font-size:40px;">&#x1f514;</span> Alarm</button>
+        </ul>
+</div>
+
+<script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 16
+        });
+        var infoWindow = new google.maps.InfoWindow({map: map});
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('You are here!');
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSjDvjV5GZK8aGTNJBtRdulOu3u28iULM&callback=initMap">
+    </script>
+
+
+
+</body>
+</html>
