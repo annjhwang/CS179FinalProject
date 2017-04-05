@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-#sos {
+#sosbutton {
 	position:absolute;
 	z-index: 10;
 }
