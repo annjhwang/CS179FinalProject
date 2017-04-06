@@ -130,8 +130,7 @@
             <button style="width:33.3%; background-color: #f98704">Request CheckIn</button>
             <button style="width:33.3%; background-color: #4286f4">CheckOut</button>
         </div>
-
-</div>
+    </div>
 
 
     </div>
@@ -148,6 +147,22 @@
         </ul>
     </div>
     </div>
+    <div data-role="content">
+        <div style="width:85% ; height:100px; padding: 10px; background-color: teal">
+            <img src="pics/annie.png" style="margin:auto; float:left; vertical-align: center" alt="annie" width="150"> <h4>Annie</h4> <i class="w3-gray">Last CheckIn 10 min ago</i>
+            <p>Has anyone seen Arman?</p>
+        </div>
+        <div style="width:85% ; height:100px; padding: 10px; background-color: teal">
+            <img src="pics/gabe.png" style="margin:auto; float:left; vertical-align: center" alt="gabe" width="150"> <h4>Gabe</h4> <i class="w3-gray">Last CheckIn 10 min ago</i>
+            <p>Not sure, let's ask him to CheckIn?</p>
+        </div>
+        <div style="width:85% ; height:100px; padding: 10px; background-color: blue">
+            <img src="pics/alice.png" style="margin:auto; float:left; vertical-align: center" alt="alice" width="150"> <h4>Alice</h4> <i class="w3-gray">Last CheckIn 10 min ago</i>
+            <p>Ok, I'll ask him</p>
+        </div>
+        
+    </div>
+    <img src="pics/keyboard.png" style="margin:auto; float:left; vertical-align: center" alt="keyboard" width=100%> 
 </div>
 
 <div data-role="page" class="pages" id="sospage" data-url="sos-page">
@@ -171,7 +186,6 @@
           zoom: 16
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
-
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
@@ -179,7 +193,6 @@
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-
             infoWindow.setPosition(pos);
             infoWindow.setContent('You are here!');
             map.setCenter(pos);
@@ -191,7 +204,6 @@
           handleLocationError(false, infoWindow, map.getCenter());
         }
       }
-
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
