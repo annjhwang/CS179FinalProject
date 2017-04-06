@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+    
+
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>    
 </head>
@@ -31,13 +33,47 @@
 <div data-role="page" id="add-friends" class="pages">
     <div data-role="header">
         <h1>Add Friends</h1>
-  
      </div>
-        <div data-role="content" >
-        <!--<div id="map"></div>-->
-            <h3> Welcome to CheckIn!<h3>
-            <a href="#" class="ui-btn">Make A Group</a>
-        </div>
+
+
+    <div data-role="content" >
+
+        <ul data-role="listview" data-filter="true" data-filter-placeholder="Search friends" data-inset="true">
+            <li><a href="#">Alice</a></li>
+            <li><a href="#">Arman</a></li>
+            <li><a href="#">Gabe</a></li>
+            <li><a href="#">Annie</a></li>
+            <li><a href="#">Tallulah</a></li>
+            <li><a href="#">Larry</a></li>
+        </ul>
+
+        <a href="#set-details" class="ui-btn">Add end time and location</a>
+
+    </div>
+</div>
+
+
+<div data-role="page" id="set-details" class="pages">
+    <div data-role="header">
+        <h1>Add End Time and Location</h1>
+     </div>
+
+
+    <div data-role="content" >
+
+        <h3>Enter Your Ending Time</h3>
+        <form>
+            <input type="time" data-clear-btn="false" name="time-2" id="time-2" value="02:30">
+        </form>
+      
+        <h3>Enter Your Event Location</h3>
+        <form>
+            <input type="search" name="search=1" id="search-1" value="">
+        </form>
+ 
+        <a href="#list" class="ui-btn">Create group</a>
+
+    </div>
 </div>
 
 
