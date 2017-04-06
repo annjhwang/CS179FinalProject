@@ -1,5 +1,36 @@
 .pages {
     background-color: lightblue;
+};
+
+p.chattext {
+    font-size: 10px;
+}
+
+#chatone{
+    width: 85% ; 
+    height:100px; 
+    padding: 20px; 
+    margin-top: 15px;
+    background-color: #ffe6ff; 
+    float:left
+}
+
+#chatthree{
+    width: 85% ; 
+    height:100px; 
+    padding: 20px; 
+    margin-top: 15px;
+    background-color: #eafaea; 
+    float:left
+}
+
+#chattwo {
+    width:10%% ; 
+    height:100px; 
+    padding: 20px; 
+    margin-top:20px; 
+    background-color: #ebfafa; 
+    float: right
 }
 
 #map {
@@ -8,8 +39,11 @@
 }
 
 #sosbutton {
-	position:absolute;
-	z-index: 10;
+    background-color: red;
+    position:absolute;
+    top:100;
+    right:0;
+    z-index:10;
 }
 
 #meetupOptions {
@@ -21,9 +55,6 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-p {
-	font-size: 24px;
 }
 
 h1{
@@ -40,6 +71,7 @@ img {
 	position:absolute;
     top:100;
     right:0;
+    z-index:10;
 }
 
 #map-page, #map-canvas { width: 100%; height: 100%; padding: 0; }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<! Its me >
 <head>
     <title>CheckIn</title>
     <!--update view based on the device-->
@@ -27,7 +26,7 @@
         </div>
 
     </div><!-- /header -->
-    <button class="ui-btn ui-btn-inline" id="sos" href="#sos">SOS</button>
+    <a class="ui-btn ui-btn-inline" id="sos" href="#sospage">SOS</a>
     <div data-role="content" >
         <div id="map"></div>
     
@@ -52,7 +51,7 @@
     </div>
         
     <div>
-    <img style="margin:auto; float:left; vertical-align: center" src="pics/arman.jpg" alt="arman" width="150px"> <h4>Arman</h4> <i class="w3-red">Last CheckIn 2 Hours ago<i>
+    <img src="pics/arman.png" style="margin:auto; float:left; vertical-align: center" alt="arman" width="150"> <h4>Arman</h4> <i class="w3-red">Last CheckIn 2 Hours ago</i>
     </div>
         
     <button class="w3-green">Ask Arman to CheckIn</button>
@@ -82,21 +81,21 @@
 
 
 <div data-role="page" id="smartmeetup" class="pages">
-    <div data-role="header"></div>
+    <div data-role="header">
         <h1>CheckIn</h1>
-    <div data-role="navbar">
-        <ul>
-            <li><a href="#map-page" class="ui-btn-active ui-state-persist">Map</a></li>
-            <li><a href="#list">List</a></li>
-            <li><a href="#chat">Chat</a></li>
-        </ul>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#map-page" class="ui-btn-active ui-state-persist">Map</a></li>
+                <li><a href="#list">List</a></li>
+                <li><a href="#chat">Chat</a></li>
+            </ul>
+        </div>
+        <div data-role="content">
+        <!--<div id="map"></div>-->
+            <button>Smart Meet Up</button>
+
+        </div>
     </div>
-    <div data-role="content">
-    <!--<div id="map"></div>-->
-        <button>Smart Meet Up</button>
-    <div>
-</div>
-</div>
 </div>
 
 
@@ -131,8 +130,7 @@
             <button style="width:33.3%; background-color: #f98704">Request CheckIn</button>
             <button style="width:33.3%; background-color: #4286f4">CheckOut</button>
         </div>
-
-
+    </div>
 
 
     </div>
@@ -149,9 +147,31 @@
         </ul>
     </div>
     </div>
+    <div data-role="content">
+        <div id ="chatone">
+            <img src="pics/annie.png" style="margin:auto; float:left; vertical-align: center" alt="annie" width="10%"> <b>Annie</b> 
+            <p class = "chattext"> Has anyone seen Arman? </p>
+           
+        </div>
+
+
+        <div id ="chatthree" >
+            <img src="pics/gabe.png" style="margin:auto; float:left; vertical-align: center" alt="gabe" width="10%"> <b>Gabe</b> 
+            <p class = "chattext"> No, let's ask him to CheckIn. </p>
+
+
+        </div>
+        <div id ="chattwo">
+            <img src="pics/alice.png" style="margin:auto; float:left; vertical-align: center" alt="alice" width="10%"> 
+            <b>Alice</b>
+             <p class = "chattext" > Ok, I'll ask him</p>
+        </div>
+        
+    </div>
+    <img src="pics/keyboard.png" style="margin:auto; float:left; vertical-align: center" alt="keyboard" width=100%> 
 </div>
 
-<div data-role="page" class="pages" id="sos" data-url="sos-page">
+<div data-role="page" class="pages" id="sospage" data-url="sos-page">
     <div data-role="header" bac class="w3-red">
     // TODO: need to put a back button 
      <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
@@ -172,7 +192,6 @@
           zoom: 16
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
-
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
@@ -180,7 +199,6 @@
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-
             infoWindow.setPosition(pos);
             infoWindow.setContent('You are here!');
             map.setCenter(pos);
@@ -192,7 +210,6 @@
           handleLocationError(false, infoWindow, map.getCenter());
         }
       }
-
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
