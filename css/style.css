@@ -8,8 +8,11 @@
 }
 
 #sosbutton {
-	position:absolute;
-	z-index: 10;
+    background-color: red;
+    position:absolute;
+    top:100;
+    right:0;
+    z-index:10;
 }
 
 #meetupOptions {
@@ -40,6 +43,7 @@ img {
 	position:absolute;
     top:100;
     right:0;
+    z-index:10;
 }
 
 #map-page, #map-canvas { width: 100%; height: 100%; padding: 0; }
