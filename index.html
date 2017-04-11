@@ -5,11 +5,9 @@
     <!--update view based on the device-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--get jquery mobile libraries and css-->
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-    
 
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>    
@@ -25,7 +23,7 @@
      </div>
         <div data-role="content" >
         <!--<div id="map"></div>-->
-            <h3> Welcome to CheckIn!<h3>
+            <h3> Welcome to CheckIn!</h3>
             <a href="#add-friends" class="ui-btn">Make A Group</a>
         </div>
 </div>
@@ -71,11 +69,34 @@
             <input type="search" name="search=1" id="search-1" value="">
         </form>
 
-        <a href="main.html" data-role="button">Create group</a>
+        <a href="#map-page" data-role="button">Create group</a>
 
     </div>
 </div>
 
+<div data-role="page" class="pages" id="map-page" data-url="map-page">
+    <div data-role="header">
+        <h1>CheckIn</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#map-page" class="ui-btn-active ui-state-persist">Map</a></li>
+                <li><a href="#list">List</a></li>
+                <li><a href="#chat">Chat</a></li>
+            </ul>
+        </div>
+
+    </div><!-- /header -->
+    <a class="ui-btn ui-btn-inline" id="sos" href="#sospage">SOS</a>
+    <div data-role="content" >
+        <div id="map"></div>
+    
+        <div data-role="controlgroup" data-type="horizontal" id="meetupOptions">
+        <a href="#droppin" data-role="button">Drop pin to meet up</a>
+        <a href="#smartmeetup" data-role="button">Smart Meet Up</a>
+        </div>
+
+    </div>
+</div>
 
 
 </body>
