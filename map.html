@@ -41,7 +41,27 @@
     });
 </script>
 -->
+
+<style>
+    #fly {
+        display: block;
+        position: relative;
+        margin: 0px auto;
+        width: 50%;
+        height: 40px;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        font-size: 12px;
+        text-align: center;
+        color: #fff;
+        background: #ee8a65;
+    }
+</style>
+
 <div id='map'></div>
+
+<button id='fly'>Fly</button>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FiZW1hcnRpbmV6IiwiYSI6ImNqMWR3bGR1ZjAwaGgzMm5vZ3VybThhaHoifQ.r9ppYX0cJi7KprnhqDX3Rw';
 var map = new mapboxgl.Map({
@@ -49,6 +69,22 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/streets-v9',
     center: [-96, 37.8], // starting position
     zoom: 3 // starting zoom
+});
+
+document.getElementById('fly').addEventListener('click', function () {
+    // Fly to a random location by offsetting the point -74.50, 40
+    // by up to 5 degrees.
+
+    /*
+    map.flyTo({
+        center: [
+            -74.50 + (Math.random() - 0.5) * 10,
+            40 + (Math.random() - 0.5) * 10]
+    });
+    */
+    map.addControl(new mapboxgl.GeolocateControl());
+
+
 });
 
 // Add geolocate control to the map.
@@ -94,10 +130,12 @@ map.addControl(new mapboxgl.GeolocateControl());
 
 
 </script>
+
+<!--
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSjDvjV5GZK8aGTNJBtRdulOu3u28iULM&callback=initMap">
     </script>
-
+-->
 
 
 </body>
