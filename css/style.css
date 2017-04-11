@@ -128,3 +128,10 @@ img {
 .btn-group2 button:hover {
     background-color: #3e8e41;
 }
+
+#buttonz {
+    width:33.3%; 
+    background-color: #4286f4; 
+    text-align: center; 
+    margin: auto
+}
