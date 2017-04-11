@@ -1,3 +1,3 @@
-function myFunction(phrase) {
-	alert(phrase);
+function Popup(phrase) {
+	window.alert(phrase);
 }
