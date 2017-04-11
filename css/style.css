@@ -6,7 +6,7 @@ p.chattext {
     font-size: 10px;
 }
 
-#chatone{
+div#chatone{
     width: 85% ; 
     height:100px; 
     padding: 20px; 
@@ -15,7 +15,7 @@ p.chattext {
     float:left
 }
 
-#chatthree{
+div#chatthree{
     width: 85% ; 
     height:100px; 
     padding: 20px; 
@@ -24,7 +24,7 @@ p.chattext {
     float:left
 }
 
-#chattwo {
+div#chattwo {
     width:10%% ; 
     height:100px; 
     padding: 20px; 
