@@ -115,7 +115,10 @@
     <div data-role="content">
         <div style="width:100% ; height:100px; background-color: #066472">
             <a href="ProfilePage.html" data-role="button"><p>Arman</p></a></button>
-            <button style="margin:auto; float:right">Message</button>
+            <button style="margin:auto; float:right"><a href="#myPopup" data-rel="popup" data-position-to="window">Message</a></button>
+                <div data-role="popup" id="myPopup">
+                  <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="pics/Messaging.jpg" style="width:100%">
+                </div>
             <button style="margin:auto; float:right"><a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="margin:auto; float:right; padding:1px 2px"><p>CheckIn</p></a></button>
                 <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
                     <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
@@ -149,7 +152,7 @@
                     <p>A CheckIn request has been sent to all members of your group.</p>
                 </div>
 
-            <a href="CheckOut.html"><button style="width:33.3%; background-color: #4286f4; text-align: center; margin: auto">CheckOut</button></a>
+            <a href="CheckOut.html"><button style="width:33.3%; background-color: #4286f4; text-align: center; margin: auto; padding:35px">CheckOut</button></a>
         </div>
     </div>
 
