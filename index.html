@@ -190,10 +190,25 @@
     <img src="pics/keyboard.png" style="margin:auto; float:left; vertical-align: center" alt="keyboard" width=100%> 
 </div>
 
+<div data-role="page" id="list" class="pages">
+    <div data-role="header">    
+    <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
+        <h1>CheckIn</h1>
+    <div data-role="content" id="stuff">
+
+        Alice wants to check in! Please place your finger on the screen below in order to Check In. 
+
+    </div>
+    <button id="fingerprint" class="btn-round"><img src="pics/finger.png"><href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="margin:auto; float:right; padding:1px 2px"></button>
+    <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
+                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                    <p>You've CheckedIn!</p>
+                     </div>
+</div>
+
 <div data-role="page" class="pages" id="sospage" data-url="sos-page">
     <div data-role="header" bac class="w3-red">
-<!--     // TODO: need to put a back button 
- -->     <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
+    <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
     <h1>SOS</h1>
     </div>
         <ul>
