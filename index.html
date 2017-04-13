@@ -26,7 +26,7 @@
         <!--<div id="map"></div>-->
             <h3 id="welcometext"> Welcome to CheckIn!</h3>
             
-            <img src="pics/check_user_group-512.png" id="checkinicon">
+            <img src="pics/check_user_group-512.png" id="checkinicon" style="width:80%; margin-top:30px; margin-bottom:30px;">
             <a href="#add-friends" class="ui-btn">Make A Group</a>
         </div>
 </div>
@@ -104,7 +104,7 @@
 <div data-role="page" id="list" class="pages">
     <div data-role="header">    
         <h1>List</h1>
-
+    </div>
     <div data-role="navbar">
         <ul>
             <li><a href="#map-page">Map</a></li>
@@ -112,45 +112,34 @@
             <li><a href="#chat">Chat</a></li>
         </ul>
     </div>
-    <div data-role="content">
-        <div style="width:100% ; height:100px; background-color: #066472">
-            <a href="ProfilePage.html" data-role="button"><p>Arman</p></a>
-            <button style="margin:auto; float:right"><a href="#myPopup" data-rel="popup" data-position-to="window" style="margin:auto; float:right; padding:1px 2px">Message</a></button>
-                <div data-role="popup" id="myPopup">
-                  <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="pics/Messaging.jpg" style="width:100%">
-                </div>
-            <button style="margin:auto; float:right"><a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="margin:auto; float:right; padding:1px 2px">CheckIn</a></button>
-                <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
-                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-                    <p>Request Confirmed!</p>
-                </div>
-        </div>
-        <div style="width:100% ; height:100px; background-color: purple">
-            <a href="ProfilePageAlice.html" data-role="button"><p>Alice</p></a>
-            <button style="margin:auto; float:right"><a href="#myPopup" data-rel="popup" data-position-to="window" style="margin:auto; float:right; padding:1px 2px">Message</a></button>
-            	<div data-role="popup" id="myPopup">
-                  <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="pics/Messaging.jpg" style="width:100%">
-                </div>
-            <button style="margin:auto; float:right"><a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="margin:auto; float:right; padding:1px 2px">CheckIn</a></button>
-                <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
-                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-                    <p>Request Confirmed!</p>
-                </div>
-        </div>
 
-        <div style="width:100% ; height:100px; background-color: yellow">
-            <a href="ProfilePageGabe.html" data-role="button"><p>Gabe</p></a>
-            <button style="margin:auto; float:right"><a href="#myPopup" data-rel="popup" data-position-to="window" style="margin:auto; float:right; padding:1px 2px">Message</a></button>
-            	<div data-role="popup" id="myPopup">
-                  <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="pics/Messaging.jpg" style="width:100%">
-                </div>
-            <button style="margin:auto; float:right"><a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="margin:auto; float:right; padding:1px 2px">CheckIn</a></button>
-            	<div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
-                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-                    <p>Request Confirmed!</p>
-                </div>
-        </div>
-
+     <ul data-role="listview" id="my-listview">
+        <li>
+            <a href="ProfilePage.html">Arman Hassan
+                <img src="pics/arman.png" style="width:56px"/>
+            </a>
+        </li>
+        <li>
+            <a href="ProfilePageGabe.html">Gabe Martinez
+                <img src="pics/gabe.png" style="width:56px"/>
+            </a>
+        </li>
+        <li>
+            <a href="ProfilePageAlice.html">Alice Xiao
+                <img src="pics/alice.png" style="width:56px"/>
+            </a>
+        </li>
+         <li>
+            <a href="ProfilePageAlice.html">Annie Hwang
+                <img src="pics/annie.png" style="width:56px"/>
+            </a>
+        </li>
+        <li> 
+            <a href="ProfilePageAlice.html">Zeerak Ahmed
+                <img src="pics/zeerakcircle.png" style="width:56px"/>
+            </a>
+        </li>
+    </ul>
 
 
         <div class="btn-group" style="width:100%">
@@ -168,7 +157,6 @@
 
             <a href="CheckOut.html"><button style="width:33.3%; background-color: #4286f4; text-align: center; margin: auto; position:relative; margin-top:50%; padding: 38px; font-size: 7px; color: white">CheckOut</button></a>
         </div>
-    </div>
     </div>
 </div>
 
