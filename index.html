@@ -11,6 +11,7 @@
 
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>    
+
 </head>
 <body>
 
@@ -23,7 +24,9 @@
      </div>
         <div data-role="content" >
         <!--<div id="map"></div>-->
-            <h3> Welcome to CheckIn!</h3>
+            <h3 id="welcometext"> Welcome to CheckIn!</h3>
+            
+            <img src="pics/check_user_group-512.png" id="checkinicon">
             <a href="#add-friends" class="ui-btn">Make A Group</a>
         </div>
 </div>
@@ -37,12 +40,12 @@
     <div data-role="content" >
 
         <ul data-role="listview" data-filter="true" data-filter-placeholder="Search friends" data-inset="true">
-            <li><a href="#">Alice</a></li>
-            <li><a href="#">Arman</a></li>
-            <li><a href="#">Gabe</a></li>
-            <li><a href="#">Annie</a></li>
-            <li><a href="#">Tallulah</a></li>
-            <li><a href="#">Larry</a></li>
+            <li data-icon="plus" id="btnFree"><a href="#">Alice</a></li>
+            <li data-icon="plus"><a href="#">Arman</a></li>
+            <li data-icon="plus"><a href="#">Gabe</a></li>
+            <li data-icon="plus"><a href="#">Annie</a></li>
+            <li data-icon="plus"><a href="#">Tallulah</a></li>
+            <li data-icon="plus"><a href="#">Larry</a></li>
         </ul>
 
         <a href="#set-details" class="ui-btn">Add end time and location</a>
@@ -190,6 +193,7 @@
     <img src="pics/keyboard.png" style="margin:auto; float:left; vertical-align: center" alt="keyboard" width=100%> 
 </div>
 
+<!--
 <div data-role="page" id="list" class="pages">
     <div data-role="header">    
     <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
@@ -205,6 +209,7 @@
                     <p>You've CheckedIn!</p>
                      </div>
 </div>
+-->
 
 <div data-role="page" class="pages" id="sospage" data-url="sos-page">
     <div data-role="header" bac class="w3-red">

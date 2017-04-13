@@ -6,6 +6,25 @@ p.chattext {
     font-size: 10px;
 }
 
+.clickable {
+
+    list-style:none;
+    cursor:pointer;
+
+}
+
+#welcometext {
+    text-align:center;
+    font-size: 30px;
+    margin-top: 40px;
+}
+
+#checkinicon {
+   width:80%; 
+   margin-top:30px; 
+   margin-bottom:30px;
+}
+
 div#chatone{
     width: 85% ; 
     height:100px; 
