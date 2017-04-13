@@ -123,15 +123,29 @@
                 </div>
         </div>
         <div style="width:100% ; height:100px; background-color: purple">
-            <button style="margin:auto; float:left">Alice</button>
-            <button style="margin:auto; float:right">Message</button>
-            <button style="margin:auto; float:right">CheckIn</button>
+            <a href="ProfilePageAlice.html" data-role="button"><p>Alice</p></a>
+            <button style="margin:auto; float:right"><a href="#myPopup" data-rel="popup" data-position-to="window" style="margin:auto; float:right; padding:1px 2px">Message</a></button>
+            	<div data-role="popup" id="myPopup">
+                  <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="pics/Messaging.jpg" style="width:100%">
+                </div>
+            <button style="margin:auto; float:right"><a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="margin:auto; float:right; padding:1px 2px">CheckIn</a></button>
+                <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
+                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                    <p>Request Confirmed!</p>
+                </div>
         </div>
 
         <div style="width:100% ; height:100px; background-color: yellow">
-            <button style="margin:auto; float:left">Gabe</button>
-            <button style="margin:auto; float:right">Message</button>
-            <button style="margin:auto; float:right">CheckIn</button>
+            <a href="ProfilePageGabe.html" data-role="button"><p>Gabe</p></a>
+            <button style="margin:auto; float:right"><a href="#myPopup" data-rel="popup" data-position-to="window" style="margin:auto; float:right; padding:1px 2px">Message</a></button>
+            	<div data-role="popup" id="myPopup">
+                  <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="pics/Messaging.jpg" style="width:100%">
+                </div>
+            <button style="margin:auto; float:right"><a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="margin:auto; float:right; padding:1px 2px">CheckIn</a></button>
+            	<div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
+                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                    <p>Request Confirmed!</p>
+                </div>
         </div>
 
 
@@ -190,7 +204,7 @@
     <img src="pics/keyboard.png" style="margin:auto; float:left; vertical-align: center" alt="keyboard" width=100%> 
 </div>
 
-<div data-role="page" id="list" class="pages">
+<div data-role="page" id="CheckIn" class="pages">
     <div data-role="header">    
     <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
         <h1>CheckIn</h1>
