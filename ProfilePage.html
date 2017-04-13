@@ -18,8 +18,8 @@
 
 
 <div data-role="page" id="list" class="pages">
-    <div data-role="header">    
-        <img src="pics/CheckIn.png" style="max-width: 60%" alt="checkin">
+    <div data-role="header" style="background-color:#008AE2">    
+        <h1><img src="pics/CheckIn.png" style="max-width: 60%"></img></h1>
     <div data-role="navbar">
         <ul>
             <li><a href="index.html#map-page">Map</a></li>
@@ -38,19 +38,37 @@
             <button style="background-color: red">Locate</button>
         </div> -->
         <div style="display: block">
-            <button type="button" style="background-color: green ; width:100%; padding: 45px" class="btn btn-primary"><a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="color: white; background-color: green; box-shadow: none; text-align: center; margin: auto; border:none; width:100%">Ask Arman to CheckIn</a></button>
+            <button type="button" style="background-color: green ; width:100%; padding: 45px" class="btn btn-primary">
+                <a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="color: white; background-color: green; box-shadow: none; text-align: center; margin: auto; border:none; width:100%">
+                        Ask Arman to CheckIn
+                </a>
+            </button>
                 <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
-                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-                    <p>A CheckIn request has been sent to Arman. </p>
+                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">
+                        Close
+                    </a>
+                    <p>
+                        A CheckIn request has been sent to Arman.
+                    </p>
                 </div>
 
-            <button type="button" style="background-color: #f98704; width:100%; padding: 45px; color: white" class="btn btn-primary"><a href="#myPopup" data-rel="popup" data-position-to="window">Message</a></button>
+            <button type="button" style="background-color: #f98704; width:100%; padding: 45px; color: white" class="btn btn-primary">
+                <a href="#myPopup" data-rel="popup" data-position-to="window">
+                    Message
+                </a>
+            </button>
                 <div data-role="popup" id="myPopup">
-                  <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="pics/Messaging.jpg" style="width:100%">
+                  <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">
+                    Close</a><img src="pics/Messaging.jpg" style="width:100%"></img>
                 </div>
 
-            <a href="map.html"><button type="button" style="background-color: #bf2424; width:100%; padding: 45px; color:white" class="btn btn-primary">Locate</button></a>
-
+            <a href="map.html">
+                <button type="button" style="background-color: #bf2424; width:100%; padding: 45px; color:white" class="btn btn-primary">
+                    Locate
+                </button>
+            </a>
+        </div>
+    </div>
     
 
 
