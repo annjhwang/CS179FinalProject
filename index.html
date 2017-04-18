@@ -18,42 +18,23 @@
 </head>
 <body>
 
-<style>
-    #fly {
-        display: block;
-        position: relative;
-        margin: 0px auto;
-        width: 50%;
-        height: 40px;
-        padding: 10px;
-        border: none;
-        border-radius: 3px;
-        font-size: 12px;
-        text-align: center;
-        color: #fff;
-        background: #ee8a65;
-    }
-</style>
-
-
 
 <div data-role="page" id="welcome" class="pages">
     <div data-role="header" style="background-color:#008AE2">
-         <h1><img src="pics/CheckIn.png" style="max-width: 60%"></img></h1>
-
+        <img src="pics/checkIn.png" style="max-width: 40%">
      </div>
         <div data-role="content" >
         <!--<div id="map"></div>-->
             <h3 id="welcometext"> Welcome to CheckIn!</h3>
             
-            <img src="pics/check_user_group-512.png" id="checkinicon" style="width:80%; margin-top:30px; margin-bottom:30px;">
+            <img src="pics/groupicon1.png" alt="group"id="checkinicon" style="width:80%; margin-top:30px; margin-bottom:30px;">
             <a href="#add-friends" class="ui-btn">Make A Group</a>
         </div>
 </div>
 
 <div data-role="page" id="add-friends" class="pages">
     <div data-role="header" style="background-color:#008AE2">
-        <h1><img src="pics/CheckIn.png" style="max-width: 60%"></img></h1>
+        <img src="pics/CheckIn.png" style="max-width: 40%">
      </div>
 
      <h4 style="text-align:center"><b>Add Friends</b></h4>
@@ -73,10 +54,9 @@
     </div>
 </div>
 
-
 <div data-role="page" id="set-details" class="pages">
    <div data-role="header" style="background-color:#008AE2">
-        <h1><img src="pics/CheckIn.png" style="max-width: 60%"></img></h1>
+        <img src="pics/CheckIn.png" style="max-width: 40%">
      </div>
 
 
@@ -99,18 +79,94 @@
 
 </div>
 
-<div data-role="page" class="pages" id="map-page" data-url="map-page">
-    <div data-role="header" style="background-color:#008AE2">
-        <h1><img src="pics/CheckIn.png" style="max-width: 60%"></img></h1>
-        <div data-role="navbar">
-            <ul>
-                <li><a href="#map-page" class="ui-btn-active ui-state-persist">Map</a></li>
-                <li><a href="#list">List</a></li>
-                <li><a href="#chat">Chat</a></li>
-            </ul>
-        </div>
+<div data-role="page" id="list" class="pages">
+    <div data-role="header" style="background-color:#008AE2">    
+        <img src="pics/CheckIn.png" style="max-width: 40%">
+        <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
+    </div>
 
+
+     <ul data-role="listview" id="my-listview">
+        <li>
+            <a href="armanchat.html">Arman Hassan
+                <img src="pics/arman.png" style="width:56px"/>
+            </a>
+        </li>
+        <li>
+            <a href="gabechat.html">Gabe Martinez
+                <img src="pics/gabe.png" style="width:56px"/>
+            </a>
+        </li>
+        <li>
+            <a href="alicechat.html">Alice Xiao
+                <img src="pics/alice.png" style="width:56px"/>
+            </a>
+        </li>
+         <li>
+            <a href="alicechat.html">Annie Hwang
+                <img src="pics/annie.png" style="width:56px"/>
+            </a>
+        </li>
+        <li> 
+            <a href="armanchat.html">Zeerak Ahmed
+                <img src="pics/zeerakcircle.png" style="width:56px"/>
+            </a>
+        </li>
+    </ul>
+
+
+        <div class="btn-group" style="width:100%">
+            <button style="width:33.3% ; background-color: green; text-align: center; margin: auto; position:relative; margin-top:50%">
+                <a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="color: white; background-color: green; text-align: center; margin: auto">
+                        I'm Good
+                </a>
+            </button>
+                <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
+                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">
+                        Close
+                    </a>
+                    <p>
+                        You have notified your group that all is well!
+                    </p>
+                </div>
+
+            <button style="width:33.3%; background-color: #f98704; text-align: center; margin: auto; position:relative; margin-top:50%;">
+                <a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="color: white; background-color: #f98704; text-align: center; margin: auto; font-size:8px; padding: 12px">
+                        Request CheckIn
+                </a>
+            </button>
+                <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
+                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">
+                        Close
+                    </a>
+                    <p>
+                        A CheckIn request has been sent to all members of your group.
+                    </p>
+                </div>
+
+            <a href="CheckOut.html">
+                <button style="width:33.3%; background-color: #4286f4; text-align: center; margin: auto; position:relative; margin-top:50%; padding: 38px; font-size: 7px; color: white">
+                        CheckOut
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div data-role="page" class="pages" id="map-page" data-url="map-page">
+    <div data-role="header" style="background-color:#008AE2" data-position="inline">
+        <img src="pics/CheckIn.png" style="max-width: 40%">
+        <a href="#list" data-role="button" class="ui-btn-right"> <img src="pics/groupicon1.png" alt="group" style="width:25px; margin-top:10px"></a>
     </div><!-- /header -->
+    
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#map-page" class="ui-btn-active ui-state-persist">Map</a></li>
+            <li><a href="#chat">Chat</a></li>
+        </ul>
+    </div>
+
     <!--<a class="ui-btn ui-btn-inline" id="sos" style="float: left;" href="#sospage">SOS</a>-->
     <div data-role="content" >
         <div id='map'></div>
@@ -130,132 +186,50 @@
 
 
 
-
-
-
-
-
-
-
-
-<div data-role="page" id="list" class="pages">
-    <div data-role="header" style="background-color:#008AE2">    
-        <h1><img src="pics/CheckIn.png" style="max-width: 60%"></img></h1>
-    </div>
-    <div data-role="navbar">
-        <ul>
-            <li><a href="#map-page">Map</a></li>
-            <li><a href="#list" class="ui-btn-active ui-state-persist">List</a></li>
-            <li><a href="#chat">Chat</a></li>
-        </ul>
-    </div>
-
-     <ul data-role="listview" id="my-listview">
-        <li>
-            <a href="ProfilePage.html">Arman Hassan
-                <img src="pics/arman.png" style="width:56px"/>
-            </a>
-        </li>
-        <li>
-            <a href="ProfilePageGabe.html">Gabe Martinez
-                <img src="pics/gabe.png" style="width:56px"/>
-            </a>
-        </li>
-        <li>
-            <a href="ProfilePageAlice.html">Alice Xiao
-                <img src="pics/alice.png" style="width:56px"/>
-            </a>
-        </li>
-         <li>
-            <a href="ProfilePageAlice.html">Annie Hwang
-                <img src="pics/annie.png" style="width:56px"/>
-            </a>
-        </li>
-        <li> 
-            <a href="ProfilePageAlice.html">Zeerak Ahmed
-                <img src="pics/zeerakcircle.png" style="width:56px"/>
-            </a>
-        </li>
-    </ul>
-
-
-        <div class="btn-group" style="width:100%">
-            <button style="width:33.3% ; background-color: green; text-align: center; margin: auto; position:relative; margin-top:50%">
-            	<a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="color: white; background-color: green; text-align: center; margin: auto">
-            			I'm Good
-            	</a>
-            </button>
-                <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
-                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">
-                    	Close
-                    </a>
-                    <p>
-                    	You have notified your group that all is well!
-                    </p>
-                </div>
-
-            <button style="width:33.3%; background-color: #f98704; text-align: center; margin: auto; position:relative; margin-top:50%;">
-            	<a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="color: white; background-color: #f98704; text-align: center; margin: auto; font-size:8px; padding: 12px">
-            			Request CheckIn
-            	</a>
-            </button>
-                <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
-                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">
-                    	Close
-                    </a>
-                    <p>
-                    	A CheckIn request has been sent to all members of your group.
-                    </p>
-                </div>
-
-            <a href="CheckOut.html">
-            	<button style="width:33.3%; background-color: #4286f4; text-align: center; margin: auto; position:relative; margin-top:50%; padding: 38px; font-size: 7px; color: white">
-            			CheckOut
-            	</button>
-            </a>
-        </div>
-    </div>
-</div>
-
-<div data-role="page" id="chat" class="pages">
+<div data-role="page" id="chat">
     <div data-role="header" style="background-color:#008AE2">
-        <h1><img src="pics/CheckIn.png" style="max-width: 60%"></img></h1>
+        <img src="pics/CheckIn.png" style="max-width: 40%">
+        <a href="#list" data-role="button" class="ui-btn-right"> <img src="pics/groupicon1.png" style="width:25px; margin-top:10px"></a>
+    </div>
     <div data-role="navbar">
         <ul>
             <li><a href="#map-page">Map</a></li>
-            <li><a href="#list">List</a></li>
             <li><a href="#chat" class="ui-btn-active ui-state-persist">Chat</a></li>
         </ul>
     </div>
-    </div>
     <div data-role="content">
-        <div id ="chatone">
-            <img src="pics/annie.png" style="margin:auto; float:left; vertical-align: center" alt="annie" width="10%"> <b>Annie</b> 
-            <p class = "chattext"> Has anyone seen Arman? </p>
-           
+        <div class="messageArman">
+            <a href="alicechat.html">  <img src="pics/alice.png" alt="alice" style="float:left;width:33px"> </a>
+            <span class='username'> <b>Alice: </b> </span> Has anyone seen Annie? 
         </div>
 
-
-        <div id ="chatthree" >
-            <img src="pics/gabe.png" style="margin:auto; float:left; vertical-align: center" alt="gabe" width="10%"> <b>Gabe</b> 
-            <p class = "chattext"> No, let's ask him to CheckIn. </p>
-
-
+        <div class='messageUpdate'>
+            Gabe checked in at 6:42PM.
         </div>
-        <div id ="chattwo">
-            <img src="pics/alice.png" style="margin:auto; float:left; vertical-align: center" alt="alice" width="10%"> 
-            <b>Alice</b>
-             <p class = "chattext" > Ok, I'll ask him</p>
+        
+
+
+        <div class="messageArman">
+            <a href="gabechat.html">  <img src="pics/gabe.png" alt="gabe" style="float:left;width:33px"> </a>
+            <span class='username'> <b>Gabe: </b> </span> No, let's ask her to CheckIn. 
+        </div>
+
+        <div class='messageUpdate'>
+            Alice checked in at 6:59PM.
+        </div>
+        <div class="messageAnnie">
+            <a href="armanchat.html"> <img src="pics/arman.png" alt="arman" style="float:right;width:33px"></a>
+            <span class='username'> <b>Arman:</b> </span>  Ok, I'll ask her
         </div>
         
     </div>
-    <img src="pics/keyboard.png" style="margin:auto; float:left; vertical-align: center" alt="keyboard" width=100%> 
+    <img src="pics/keyboard.png" style="margin:auto; float:left; vertical-align: center; width:99%" alt="keyboard"> 
 </div>
 
 
 
 <div data-role="page" class="pages" id="sospage" data-url="sos-page">
-    <div data-role="header" bac class="w3-red">
+    <div data-role="header">
     <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
         <h1>SOS</h1>
     </div>

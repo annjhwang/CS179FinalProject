@@ -8,6 +8,55 @@
   padding: 0;
 }
 
+#fly {
+    display: block;
+    position: relative;
+    margin: 0px auto;
+    width: 50%;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #ee8a65;
+}
+
+.messageArman
+{
+    height: 50px;
+    padding: 5px 5px 5px 5px;
+    float:left;
+    background-color: #E0E0E1;
+    margin: 10px;
+    border-radius: 5px; 
+}
+
+.messageUpdate {
+    height: 8px;
+    padding: 5px 5px 5px 5px;
+    margin: auto;
+    width: 99%;
+    display: inline-block;
+    text-align: center;
+}
+
+.messageAnnie {
+    height: 50px;
+    padding: 5px 5px 5px 5px;
+    float:right;
+    background-color: #A2E5FA;
+    margin: 10px;
+    border-radius: 5px; 
+}
+
+
+.username {
+    font-weight: strong;
+
+}
+
 #list .ui-content, #my-listview {
   min-height: 100%;
   height: 100%;
@@ -28,6 +77,14 @@ p.chattext {
     list-style:none;
     cursor:pointer;
 
+}
+
+
+
+#chatSendButton{
+    width: 90%;
+    margin-left: 150px;
+    display: inline-block;
 }
 
 #welcometext {
@@ -61,7 +118,7 @@ div#chatthree{
 }
 
 div#chattwo {
-    width:10%% ; 
+    width: 85% ; 
     height:100px; 
     padding: 20px; 
     margin-top:20px; 
