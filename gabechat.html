@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CheckIn</title>
+    <!--update view based on the device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--get jquery mobile libraries and css-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>    
+</head>
+<body>
+
+
+<div data-role="page" id="list" >
+    <div data-role="header" style="background-color:#008AE2">    
+        <h1><img src="pics/CheckIn.png" style="max-width: 60%" alt="checkin"></h1>
+    <a href="index.html#chat" rel="external" data-role="button" data-icon="delete" data-iconpos="notext">Back</a>
+
+    <div data-role="content">
+        <div style="width:100% ; height:60px; background-color: #ECFAFF; text-align: center">
+            GABE <img src="pics/gabe.png" style="width:40px" alt="arman"></div>
+        </div>
+    </div>
+
+        <div class='messageArman'>
+            <img src="pics/gabe.png" alt="alice" style="float:left;width:40px"> 
+            <span class='username'><b> Gabe:</b></span> Wait where are you rn??
+        </div>
+        <div class='messageUpdate'>
+            Gabe checked in at 6:42PM.
+        </div>
+        <div class='messageUpdate'>
+            Annie checked in at 6:55PM.
+        </div>
+
+        <div class='messageAnnie'>
+            <img src="pics/annie.png" alt="annie" style="float:right;width:40px">
+            <span class='username'> <b>Annie:</b> </span> I'm in the bathroom why
+        </div>
+
+        <div class='messageArman'>
+            <img src="pics/gabe.png" alt="alice" style="float:left;width:40px"> 
+            <span class='username'> <b>Gabe: </b> </span> Just wondering I feel lost lol
+        </div>
+
+        <div class='messageAnnie'>
+            <img src="pics/annie.png" alt="annie" style="float:right;width:40px">
+            <span class='username'> <b>Annie: </b></span> K i can meet you near stairs??
+        </div>
+
+        <div class='messageUpdate'>
+            Annie checked in at 8:12PM.
+        </div>
+
+        <div style="display: block">
+            <div data-role="controlgroup" data-type="horizontal" style="text-align:center;">
+              <a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="background-color:#FDA8B8">Request CheckIn</a>
+              <a href="index.html#map-page" class="ui-btn" style="background-color:#FDA8B8">Locate</a>
+            </div><br>
+
+            <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
+                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">
+                        Close
+                    </a>
+                    <p>
+                        A CheckIn request has been sent to Gabe.
+                    </p>
+                </div>
+
+    </div>
+
+    <label for="messageText"><strong>Message:</strong></label>
+    <textarea name="messageText" id="messageText"></textarea>
+
+    <fieldset class="ui-grid-a">
+        <div class="ui-block-b"><button data-theme="a" id="chatSendButton" name="chatSendButton">Send</button>
+        </div>
+    </fieldset>
+ </div>
+
+</body>
+</html>
