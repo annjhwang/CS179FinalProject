@@ -258,45 +258,65 @@
 </div>
 
 <script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FiZW1hcnRpbmV6IiwiYSI6ImNqMWR3bGR1ZjAwaGgzMm5vZ3VybThhaHoifQ.r9ppYX0cJi7KprnhqDX3Rw';
-var map = new mapboxgl.Map({
-    container: 'map', // container id
-    style: 'mapbox://styles/mapbox/streets-v9',
-    center: [ -73.966355, 40.777478], // starting position
-    zoom: 15 // starting zoom
-});
+    function initMap() {
+        var myLatLng = {lat: 42.374546, lng: -71.118673};
 
-document.getElementById('fly-me').addEventListener('click', function () {
-    map.flyTo({
-        center: [-71.116871, 42.369607]
-    });
-    // map.addControl(new mapboxgl.GeolocateControl());
-});
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: myLatLng
+        });
 
-document.getElementById('fly-arman').addEventListener('click', function () {
-    map.flyTo({
-        center: [-71.116919, 42.378716]
-    });
-    // map.addControl(new mapboxgl.GeolocateControl());
-});
+        /*
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+        */
 
-document.getElementById('fly-alice').addEventListener('click', function () {
-    map.flyTo({
-        center: [-71.122498, 42.374848]
-    });
-    // map.addControl(new mapboxgl.GeolocateControl());
-});
+        //add locations
+             var locations = [
+                 ['Gabe', 42.369607, -71.116871,'pics/gabe.png','https://google.com'],
+                 ['Arman', 42.378716, -71.116919,'pics/arman.png'],
+                 ['Alice', 42.374848, -71.122498,'pics/alice.png'],
+                 ['Annie', 42.374636, -71.116550,'pics/annie.png']
+             ];
+             //declare marker call it 'i'
+             var marker, i;
+             //declare infowindow
+             var infowindow = new google.maps.InfoWindow();
+             //add marker to each locations
+             for (i = 0; i < locations.length; i++) {
+                 marker = new google.maps.Marker({
+                     position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                     map: map,
+                     icon: {
+                         "url": locations[i][3],
+                         "scaledSize": new google.maps.Size(35,35)
+                     },
+                     url: locations[i][4]
 
-document.getElementById('fly-annie').addEventListener('click', function () {
-    map.flyTo({
-        center: [-71.116550, 42.374636]
-    });
-    // map.addControl(new mapboxgl.GeolocateControl());
-});
+                });
+            //click function to marker, pops up infowindow
+             google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                 return function() {
+                     infowindow.setContent(locations[i][0]);
+                     infowindow.open(map, marker);
+                     window.location.href = this.url;
+                 }
+             })(marker, i));
 
-// Add geolocate control to the map.
-map.addControl(new mapboxgl.GeolocateControl());
+             }
+
+             
+      
+
+
+      }
 </script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDqVROzmpbhvxjKbFb8VBvfuUqZaD57gU&callback=initMap">
+    </script>
 
 
 </body>
