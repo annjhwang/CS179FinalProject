@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple markers</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+
+      function initMap() {
+        var myLatLng = {lat: -25.363, lng: 131.044};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: myLatLng
+        });
+
+        /*
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+        */
+
+        //add locations
+             var locations = [
+                 ['Gabe', 42.369607, -71.116871,'pics/gabe.png'],
+                 ['Arman', 42.378716, -71.116919,'pics/arman.png'],
+                 ['Alice', 38.5815719, -121.4943996,'http://labs.google.com/ridefinder/images/mm_20_green.png'],
+                 ['Soledad', 36.424687, -121.3263187,'http://labs.google.com/ridefinder/images/mm_20_blue.png'],
+                 ['Shingletown', 40.4923784, -121.8891586,'http://labs.google.com/ridefinder/images/mm_20_yellow.png']
+             ];
+             //declare marker call it 'i'
+             var marker, i;
+             //declare infowindow
+             var infowindow = new google.maps.InfoWindow();
+             //add marker to each locations
+             for (i = 0; i < locations.length; i++) {
+                 marker = new google.maps.Marker({
+                     position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                     map: map,
+                     icon: locations[i][3]
+                });
+            //click function to marker, pops up infowindow
+             google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                 return function() {
+                     infowindow.setContent(locations[i][0]);
+                     infowindow.open(map, marker);
+                 }
+             })(marker, i));
+
+             }
+
+             
+      
+
+
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDqVROzmpbhvxjKbFb8VBvfuUqZaD57gU&callback=initMap">
+    </script>
+  </body>
+</html>
