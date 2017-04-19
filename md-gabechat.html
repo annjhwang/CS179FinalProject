@@ -47,7 +47,7 @@
         </div>
         <main class="mdl-layout__content">
             <div class="page-content"><!-- Your content goes here -->
-            <button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect dialog-button mdl-color--red mdl-color-text--white">SOS</button>
+            <button class="mdl-button mdl-button--raised mdl-js-button dialog-button mdl-color--red mdl-color-text--white">SOS</button>
 
 
                       <div class="mdl-tabs mdl-js-tabs">
@@ -57,18 +57,13 @@
         </div>
         <div class="mdl-tabs__panel is-active" id="tab1">
             <div id='map'></div>
+          
+        
+            <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--green mdl-color-text--white">I'm Ok</a>
 
-            <div class="mdl-grid">
-                <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--green mdl-color-text--white">I'm Ok</a>
-                <div class="mdl-layout-spacer"></div>
-                <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--pink mdl-color-text--white">Group Check In</a>
-                 <div class="mdl-layout-spacer"></div>
-                <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--purple mdl-color-text--white">Check Out</a>
-            </div>
+            <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--pink mdl-color-text--white">Group Check In</a>
 
-
-            
-
+            <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--purple mdl-color-text--white">Check Out</a>
         </div>
         <div class="mdl-tabs__panel" id="tab2">
                 <div class="messageArman">
@@ -107,23 +102,16 @@
 
 
 <dialog id="dialog" class="mdl-dialog">
-    
   <h3 class="mdl-dialog__title">SOS</h3>
   <div class="mdl-dialog__content">
     
   </div>
   <div class="mdl-dialog__actions">
-    <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--green mdl-color-text--white">Can someone find me?</button>
-
-    <div class="mdl-layout-spacer"></div>
-
-    <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--orange mdl-color-text--white">Hey guys, I need help!</button>
-    <div class="mdl-layout-spacer"></div>
-
-    <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--red mdl-color-text--white">Call 911 + Send location</button>
-    <div class="mdl-layout-spacer"></div>
+    <button type="button" class="mdl-button mdl-color--green mdl-color-text--white">Can someone find me?</button>
     
-    <button type="button" id="close" class="mdl-button mdl-js-button mdl-js-ripple-effect">Close</button>
+    <button type="button" class="mdl-button mdl-color--orange mdl-color-text--white">Hey guys, I need help!</button>
+    <button type="button" class="mdl-button mdl-color--red mdl-color-text--white">Call 911 + Send location</button>
+    <button type="button" id="close" class="mdl-button">Close</button>
     </div>
   
 </dialog>
@@ -147,67 +135,8 @@
     }());
 
 
-
-
-    function initMap() {
-        var myLatLng = {lat: 42.374546, lng: -71.118673};
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: myLatLng
-        });
-
-        /*
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          title: 'Hello World!'
-        });
-        */
-
-        //add locations
-             var locations = [
-                 ['Gabe', 42.369607, -71.116871,'pics/gabe.png','gabechat.html'],
-                 ['Arman', 42.378716, -71.116919,'pics/arman.png','armanchat.html'],
-                 ['Alice', 42.374848, -71.122498,'pics/alice.png','alicechat.html'],
-                 ['Annie', 42.374636, -71.116550,'pics/annie.png','anniechat.html']
-             ];
-             //declare marker call it 'i'
-             var marker, i;
-             //declare infowindow
-             var infowindow = new google.maps.InfoWindow();
-             //add marker to each locations
-             for (i = 0; i < locations.length; i++) {
-                 marker = new google.maps.Marker({
-                     position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                     map: map,
-                     icon: {
-                         "url": locations[i][3],
-                         "scaledSize": new google.maps.Size(35,35)
-                     },
-                     url: locations[i][4]
-
-                });
-            //click function to marker, pops up infowindow
-             google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                 return function() {
-                     infowindow.setContent(locations[i][0]);
-                     infowindow.open(map, marker);
-                     window.location.href = this.url;
-                 }
-             })(marker, i));
-
-             }
-
-             
-      
-
-
-      }
 </script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDqVROzmpbhvxjKbFb8VBvfuUqZaD57gU&callback=initMap">
-    </script>
+
 
 
 </body>
