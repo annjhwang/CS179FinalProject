@@ -6,32 +6,33 @@
     <title>CheckIn</title>
      <!--update view based on the device-->
 
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!--get jquery mobile libraries and css-->
+    <!--update view based on the device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--get jquery mobile libraries and css-->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>    
 
-    <link rel="stylesheet" href="css/style.css">
-
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.34.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.34.0/mapbox-gl.css' rel='stylesheet' />
     
 
 </head>
+    <!--
 <body class="settings">
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header ">
     <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row mdl-color--blue"><!-- Title -->
+    <div class="mdl-layout__header-row mdl-color--blue"><
         <span class="mdl-layout-title">CheckIn</span>
-        <!-- Add spacer, to align navigation to the right -->
+        <!-- Add spacer, to align navigation to the right 
         <div class="mdl-layout-spacer "></div>
         <!-- Navigation. We hide it in small screens. 
         <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
-        -->
+
     </div>
     </header>
 
@@ -44,8 +45,9 @@
         </div>
 
 
+
     <main class="mdl-layout__content">
-         <div class="page-content"><!-- Your content goes here -->
+         <div class="page-content">
             <section class="settings">
 
             <div class="mdl-tabs mdl-js-tabs">
@@ -67,8 +69,148 @@
 
         </div>
     </main>
+    -->
+    
+<!-- settings page -->
+<div data-role="page" id="settings" class="pages">
+    <div data-role="header" style="background-color:#008AE2">
+        <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
+        <img src="../pics/CheckIn.png" style="max-width: 40%">
+     </div>
+        <div data-role="content" >
+        <!--<div id="map"></div>-->
+            <h3 id="welcometext"> Settings</h3>
+            
+            <a href="#add-friends" class="ui-btn">Make A Group</a>
+            <a href="#mygroups" class="ui-btn">My Groups</a>
+        </div>
+</div>
+
+<div data-role="page" id="mygroups" class="pages">
+    <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
+    <a href="#list" class="ui-btn" style="margin:auto"> CS179 Friends</a>
+</div>
+
+<div data-role="page" id="add-friends" class="pages">
+    <div data-role="header" style="background-color:#008AE2">
+        <img src="../pics/CheckIn.png" style="max-width: 40%">
+     </div>
+
+     <h4 style="text-align:center"><b>Add Friends</b></h4>
+    <div data-role="content" >
+
+        <ul data-role="listview" data-filter="true" data-filter-placeholder="Search friends" data-inset="true">
+            <li data-icon="plus" id="btnFree"><a href="#">Alice</a></li>
+            <li data-icon="plus"><a href="#">Arman</a></li>
+            <li data-icon="plus"><a href="#">Gabe</a></li>
+            <li data-icon="plus"><a href="#">Annie</a></li>
+            <li data-icon="plus"><a href="#">Tallulah</a></li>
+            <li data-icon="plus"><a href="#">Larry</a></li>
+        </ul>
+
+        <a href="#set-details" class="ui-btn">Add end time and location</a>
+
+    </div>
+</div>
+
+<div data-role="page" id="set-details" class="pages">
+   <div data-role="header" style="background-color:#008AE2">
+        <img src="../pics/CheckIn.png" style="max-width: 40%">
+     </div>
+
+
+    <div data-role="content" >
+
+        <h3>Enter Your Ending Time</h3>
+        <form>
+            <input type="time" data-clear-btn="false" name="time-2" id="time-2" value="02:30">
+        </form>
+      
+        <h3>Enter Your Event Location</h3>
+        <form>
+            <input type="search" name="search=1" id="search-1" value="">
+        </form>
+
+        <a data-ajax="false" href="../index.html" data-role="button">Create group</a>
+
+    </div>
+
 
 </div>
+
+<div data-role="page" id="list" class="pages">
+    <div data-role="header" style="background-color:#008AE2">    
+        <img src="../pics/CheckIn.png" style="max-width: 40%">
+        <a href="#" data-rel="back" data-icon="ui-btn-icon-left ui-icon-back">Back</a>
+    </div>
+
+
+     <ul data-role="listview" id="my-listview">
+        <li>
+            <a href="../armanchat.html">Arman Hassan
+                <img src="../pics/arman.png" style="width:56px"/>
+            </a>
+        </li>
+        <li>
+            <a href="../gabechat.html">Gabe Martinez
+                <img src="../pics/gabe.png" style="width:56px"/>
+            </a>
+        </li>
+        <li>
+            <a href="../alicechat.html">Alice Xiao
+                <img src="../pics/alice.png" style="width:56px"/>
+            </a>
+        </li>
+         <li>
+            <a href="../alicechat.html">Annie Hwang
+                <img src="../pics/annie.png" style="width:56px"/>
+            </a>
+        </li>
+        <li> 
+            <a href="../armanchat.html">Zeerak Ahmed
+                <img src="../pics/zeerakcircle.png" style="width:56px"/>
+            </a>
+        </li>
+    </ul>
+
+
+        <div class="btn-group" style="width:100%">
+            <button style="width:33.3% ; background-color: green; text-align: center; margin: auto; position:relative; margin-top:50%">
+                <a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="color: white; background-color: green; text-align: center; margin: auto">
+                        I'm Good
+                </a>
+            </button>
+                <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
+                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">
+                        Close
+                    </a>
+                    <p>
+                        You have notified your group that all is well!
+                    </p>
+                </div>
+
+            <button style="width:33.3%; background-color: #f98704; text-align: center; margin: auto; position:relative; margin-top:50%;">
+                <a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-position-to="window" data-transition="flip" style="color: white; background-color: #f98704; text-align: center; margin: auto; font-size:8px; padding: 12px">
+                        Request CheckIn
+                </a>
+            </button>
+                <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
+                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">
+                        Close
+                    </a>
+                    <p>
+                        A CheckIn request has been sent to all members of your group.
+                    </p>
+                </div>
+
+            <a href="../CheckOut.html">
+                <button style="width:33.3%; background-color: #4286f4; text-align: center; margin: auto; position:relative; margin-top:50%; padding: 38px; font-size: 7px; color: white">
+                        CheckOut
+                </button>
+            </a>
+        </div>
+    </div>
+
 
 
 </body>
