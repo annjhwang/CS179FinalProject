@@ -2,10 +2,34 @@
     background-color: lightblue;
 };
 
+
+div.ui-page.ui-page-theme-a.ui-page-active{
+    min-height: 650px !important;
+    height: 100% !important;
+}
+
+.ui-page{
+    min-height: 650px !important;
+    height: 100% !important;
+}
+
+}
+
+.ui-page-theme-a{
+    min-height: 650px !important;
+    height: 100% !important;
+}
+
+.ui-page-active{
+    min-height: 650px !important;
+    height: 100% !important;
+}
+
+
 #list {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 #fly {
