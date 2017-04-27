@@ -64,9 +64,9 @@
             <div id='map'></div>
 
             <div class="mdl-grid">
-                <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--green mdl-color-text--white">I'm Ok</a>
+                <a class="mdl-button mdl-js-button mdl-js-ripple-effect checkin-button mdl-color--green mdl-color-text--white">I'm Ok</a>
                 <div class="mdl-layout-spacer"></div>
-                <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--pink mdl-color-text--white">Group Check In</a>
+                <a class="mdl-button mdl-js-button mdl-js-ripple-effect requested-button mdl-color--pink mdl-color-text--white">Group Check In</a>
                  <div class="mdl-layout-spacer"></div>
                 <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--purple mdl-color-text--white">Check Out</a>
             </div>
@@ -126,35 +126,32 @@
   
 </dialog>
 
-<dialog id="requested" class="mdl-dialog">
-    
-  <h3 class="mdl-dialog__title">Group check-in requested.</h3>
-  <div class="mdl-dialog__content">
-    
-  </div>
-  <div class="mdl-dialog__actions">
-    <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--green mdl-color-text--white">Can someone find me?</button>
-
-    <div class="mdl-layout-spacer"></div>
-
-    <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--orange mdl-color-text--white">Hey guys, I need help!</button>
-    <div class="mdl-layout-spacer"></div>
-
-    <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--red mdl-color-text--white">Call 911 + Send location</button>
-    <div class="mdl-layout-spacer"></div>
-    
-    <button type="button" id="close" class="mdl-button mdl-js-button mdl-js-ripple-effect">Close</button>
+<dialog id="checkin" class="mdl-dialog">
+    <h3 class="mdl-dialog__title">Please enter your fingerprint to check in.</h3>
+    <div class="mdl-dialog__content">
+        <img src="pics/fingerprint.png" style="width:175px" alt="fingerprint">    </div>
+    <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+        <button type="button" id="close" class="mdl-button">Close</button>
     </div>
-  
+</dialog>
+
+<dialog id="requested" class="mdl-dialog">
+    <h3 class="mdl-dialog__title">Group check-in requested.</h3>
+    <div class="mdl-dialog__content">
+        <p> A check in request has been sent to all members of your group.  You will be notified when each member checks in.</p>
+    </div>
+    <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+        <button type="button" id="close" class="mdl-button">Close</button>
+    </div>
 </dialog>
 
 
 <script>
-    /*
+    
     (function() {
         'use strict';
         var dialogButton = document.querySelector('.requested-button');
-        var dialog = document.querySelector('#dialog');
+        var dialog = document.querySelector('#requested');
         if (! dialog.showModal) {
         dialogPolyfill.registerDialog(dialog);
         }
@@ -166,7 +163,23 @@
         dialog.close();
         });
     }());
-    */
+
+      (function() {
+        'use strict';
+        var dialogButton = document.querySelector('.checkin-button');
+        var dialog = document.querySelector('#checkin');
+        if (! dialog.showModal) {
+        dialogPolyfill.registerDialog(dialog);
+        }
+        dialogButton.addEventListener('click', function() {
+        dialog.showModal();
+        });
+        dialog.querySelector('#close')
+        .addEventListener('click', function() {
+        dialog.close();
+        });
+    }());
+    
     (function() {
         'use strict';
         var dialogButton = document.querySelector('.dialogue-button');
