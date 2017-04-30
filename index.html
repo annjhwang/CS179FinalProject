@@ -68,7 +68,7 @@
                 <div class="mdl-layout-spacer"></div>
                 <a class="mdl-button mdl-js-button mdl-js-ripple-effect requested-button mdl-color--pink mdl-color-text--white">Group Check In</a>
                  <div class="mdl-layout-spacer"></div>
-                <a class="mdl-button mdl-js-button mdl-js-ripple-effect dialogue-button mdl-color--purple mdl-color-text--white">Check Out</a>
+                <a class="mdl-button mdl-js-button mdl-js-ripple-effect checkout-button mdl-color--purple mdl-color-text--white">Check Out</a>
             </div>
 
 
@@ -189,11 +189,27 @@
         dialog.close();
         });
     }());
+
+    (function() {
+        'use strict';
+        var dialogButton = document.querySelector('.checkout-button');
+        var dialog = document.querySelector('#checkout');
+        if (! dialog.showModal) {
+        dialogPolyfill.registerDialog(dialog);
+        }
+        dialogButton.addEventListener('click', function() {
+        dialog.showModal();
+        });
+        dialog.querySelector('#close')
+        .addEventListener('click', function() {
+        dialog.close();
+        });
+    }());
     
     (function() {
         'use strict';
         var dialogButton = document.querySelector('.dialogue-button');
-        var dialog = document.querySelector('#checkout');
+        var dialog = document.querySelector('#dialog');
         if (! dialog.showModal) {
         dialogPolyfill.registerDialog(dialog);
         }
