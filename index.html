@@ -145,7 +145,7 @@
     </div>
 </dialog>
 
-<dialog id="dialogue" class="mdl-dialog">
+<dialog id="checkout" class="mdl-dialog">
     <h3 class="mdl-dialog__title">Check out confirmed</h3>
     <div class="mdl-dialog__content">
         <p> You have successfully checked out.</p>
@@ -193,7 +193,7 @@
     (function() {
         'use strict';
         var dialogButton = document.querySelector('.dialogue-button');
-        var dialog = document.querySelector('#dialog');
+        var dialog = document.querySelector('#checkout');
         if (! dialog.showModal) {
         dialogPolyfill.registerDialog(dialog);
         }
