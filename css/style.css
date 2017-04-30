@@ -2,6 +2,13 @@
     background-color: lightblue;
 };
 
+#meetupbutton{
+    position: absolute;
+    left: 10px;
+    top: 30px;
+
+}
+
 
 div.ui-page.ui-page-theme-a.ui-page-active{
     min-height: 540px !important;

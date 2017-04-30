@@ -63,6 +63,8 @@
         <div class="mdl-tabs__panel is-active" id="tab1">
             <div id='map'></div>
 
+            <button id="meetupbutton" class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect meetup-button mdl-color--blue mdl-color-text--white">Meet Up</button>
+
             <div class="mdl-grid">
                 <a class="mdl-button mdl-js-button mdl-js-ripple-effect checkin-button mdl-color--green mdl-color-text--white">I'm Ok</a>
                 <div class="mdl-layout-spacer"></div>
@@ -155,6 +157,16 @@
     </div>
 </dialog>
 
+<dialog id="meetup" class="mdl-dialog">
+    <h3 class="mdl-dialog__title">Meet Up Requested</h3>
+    <div class="mdl-dialog__content">
+        <p> You have successfully requested a meet up. The most ideal meet up location is: <b>Harvard Square Starbucks</b>. It is a <b>7 min</b> walk from here. </p>
+    </div>
+    <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+        <button type="button" id="close" class="mdl-button">Close</button>
+    </div>
+</dialog>
+
 
 <script>
     
@@ -210,6 +222,23 @@
         'use strict';
         var dialogButton = document.querySelector('.dialogue-button');
         var dialog = document.querySelector('#dialog');
+        if (! dialog.showModal) {
+        dialogPolyfill.registerDialog(dialog);
+        }
+        dialogButton.addEventListener('click', function() {
+        dialog.showModal();
+        });
+        dialog.querySelector('#close')
+        .addEventListener('click', function() {
+        dialog.close();
+        });
+    }());
+
+
+    (function() {
+        'use strict';
+        var dialogButton = document.querySelector('.meetup-button');
+        var dialog = document.querySelector('#meetup');
         if (! dialog.showModal) {
         dialogPolyfill.registerDialog(dialog);
         }
