@@ -295,6 +295,25 @@
                      url: locations[i][4]
 
                 });
+
+                var meetUp = {lat: 42.374611, lng: -71.118655};
+
+                
+
+
+                function position(){
+                    var marker = new google.maps.Marker({
+                        position: meetUp,
+                        map: map,
+                        title: 'Hello World!'
+                    });
+                }
+
+                google.maps.event.addDomListener(document.getElementById('smart-meetup'),
+                    'click',
+                    position
+                );
+
             //click function to marker, pops up infowindow
              google.maps.event.addListener(marker, 'click', (function(marker, i) {
                  return function() {
