@@ -65,7 +65,7 @@
         <div class="mdl-tabs__panel is-active" id="tab1">
             <div id='map'></div>
 
-            <button id="meetupbutton" class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect meetup-button mdl-color--blue mdl-color-text--white">Meet Up</button>
+            <button id="meetupbutton" id="smart-meetup" class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect meetup-button mdl-color--blue mdl-color-text--white">Meet Up</button>
 
             <div class="mdl-grid">
                 <a class="mdl-button mdl-js-button mdl-js-ripple-effect checkin-button mdl-color--green mdl-color-text--white">I'm Ok</a>
@@ -150,9 +150,10 @@
 </dialog>
 
 <dialog id="checkout" class="mdl-dialog">
-    <h3 class="mdl-dialog__title">Check out confirmed</h3>
+    <h3 class="mdl-dialog__title">Want to check out?</h3>
     <div class="mdl-dialog__content">
-        <p> You have successfully checked out.</p>
+        <p> Verify with Touch ID to confirm check out.</p>
+                <img src="pics/fingerprint.png" style="width:175px" alt="fingerprint">   
     </div>
     <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
         <button type="button" id="close" class="mdl-button">Close</button>
@@ -296,6 +297,7 @@
 
                 });
 
+                /*
                 var meetUp = {lat: 42.374611, lng: -71.118655};
 
                 
@@ -313,6 +315,7 @@
                     'click',
                     position
                 );
+                */
 
             //click function to marker, pops up infowindow
              google.maps.event.addListener(marker, 'click', (function(marker, i) {
