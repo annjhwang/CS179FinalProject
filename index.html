@@ -65,7 +65,7 @@
         <div class="mdl-tabs__panel is-active" id="tab1">
             <div id='map'></div>
 
-            <button id="meetupbutton" class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect meetup-button mdl-color--blue mdl-color-text--white">Meet Up</button>
+            <!--<<button id="meetupbutton" id="smart-meetup" class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect meetup-button mdl-color--blue mdl-color-text--white">Meet Up</button>-->
 
             <div class="mdl-grid">
                 <a class="mdl-button mdl-js-button mdl-js-ripple-effect checkin-button mdl-color--green mdl-color-text--white">I'm Ok</a>
@@ -150,15 +150,17 @@
 </dialog>
 
 <dialog id="checkout" class="mdl-dialog">
-    <h3 class="mdl-dialog__title">Check out confirmed</h3>
+    <h3 class="mdl-dialog__title">Want to check out?</h3>
     <div class="mdl-dialog__content">
-        <p> You have successfully checked out.</p>
+        <p> Verify with Touch ID to confirm check out.</p>
+                <img src="pics/fingerprint.png" style="width:175px" alt="fingerprint">   
     </div>
     <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
         <button type="button" id="close" class="mdl-button">Close</button>
     </div>
 </dialog>
 
+<!--
 <dialog id="meetup" class="mdl-dialog">
     <h3 class="mdl-dialog__title">Meet Up Requested</h3>
     <div class="mdl-dialog__content">
@@ -168,7 +170,7 @@
         <button type="button" id="close" class="mdl-button">Close</button>
     </div>
 </dialog>
-
+-->
 
 <script>
     
@@ -236,7 +238,7 @@
         });
     }());
 
-
+    /*
     (function() {
         'use strict';
         var dialogButton = document.querySelector('.meetup-button');
@@ -252,9 +254,100 @@
         dialog.close();
         });
     }());
+    */
 
+    
+    /**
+        * The CenterControl adds a control to the map that recenters the map on
+        * Chicago.
+        * This constructor takes the control DIV as an argument.
+        * @constructor
+        */
+        function CenterControl(controlDiv, map) {
 
+            // Set CSS for the control border.
+            var controlUI = document.createElement('div');
+            controlUI.style.backgroundColor = '#fff';
+            controlUI.style.border = '2px solid #fff';
+            controlUI.style.borderRadius = '3px';
+            controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+            controlUI.style.cursor = 'pointer';
+            controlUI.style.marginBottom = '16px';
+            controlUI.style.textAlign = 'center';
+            controlUI.title = 'Click to recenter the map';
+            controlDiv.appendChild(controlUI);
 
+            // Set CSS for the control interior.
+            var controlText = document.createElement('div');
+            controlText.style.color = 'rgb(25,25,25)';
+            controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+            controlText.style.fontSize = '16px';
+            controlText.style.lineHeight = '38px';
+            controlText.style.paddingLeft = '5px';
+            controlText.style.paddingRight = '5px';
+            controlText.innerHTML = 'Smart Meetup';
+            controlUI.appendChild(controlText);
+
+            // Setup the click event listeners: simply set the map to Chicago.
+            controlUI.addEventListener('click', function() {
+                // map.setCenter(chicago);
+                var meetPoint = {lat: 42.374611, lng: -71.118655};
+
+                placeMarker(meetPoint, map);
+
+            });
+
+            function placeMarker(meetPoint, map) {
+
+                // var meetPoint = {lat: 42.374611, lng: -71.118655};
+
+                var contentString = '<div id="content">'+
+                    '<div id="siteNotice">'+
+                    '</div>'+
+                    '<h4 id="firstHeading" class="firstHeading">Meeting Point: Johnston Gate</h4>'+
+                    '<div id="bodyContent">'+
+                    '<p> You have requested a meet up! The nearest meeting point for all members of your group is <b> Johnston Gate</b>.  It is a <b>6 minute walk</b> from your current location.</p>'+
+                    '</div>'+
+                    '</div>';
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
+                var marker = new google.maps.Marker({
+                    
+                    title: 'Smart MeetUp Point',
+                    position: meetPoint,
+                    map: map
+                  
+
+                });
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                });
+                // map.setCenter(location);
+                marker.setMap(map);
+            }
+
+            
+
+        }
+
+/*
+        // This event listener calls addMarker() when the map is clicked.
+  google.maps.event.addListener(map, 'click', function(e) {
+    placeMarker(e.latLng, map);
+  });
+
+  function placeMarker(position, map) {
+    var marker = new google.maps.Marker({
+      position: position,
+      map: map
+    });  
+    map.panTo(position);
+  }
+
+*/
 
     function initMap() {
         var myLatLng = {lat: 42.374546, lng: -71.118673};
@@ -295,6 +388,27 @@
                      url: locations[i][4]
 
                 });
+
+                /*
+                var meetUp = {lat: 42.374611, lng: -71.118655};
+
+                
+
+
+                function position(){
+                    var marker = new google.maps.Marker({
+                        position: meetUp,
+                        map: map,
+                        title: 'Hello World!'
+                    });
+                }
+
+                google.maps.event.addDomListener(document.getElementById('smart-meetup'),
+                    'click',
+                    position
+                );
+                */
+
             //click function to marker, pops up infowindow
              google.maps.event.addListener(marker, 'click', (function(marker, i) {
                  return function() {
@@ -305,6 +419,14 @@
              })(marker, i));
 
              }
+
+             // Create the DIV to hold the control and call the CenterControl()
+            // constructor passing in this DIV.
+            var centerControlDiv = document.createElement('div');
+            var centerControl = new CenterControl(centerControlDiv, map);
+
+            centerControlDiv.index = 1;
+            map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
 
              
 
